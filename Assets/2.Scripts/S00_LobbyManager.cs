@@ -11,6 +11,7 @@ public class S00_LobbyManager : NetworkLobbyManager
     public BackButtonDelegate backDelegate;
     public bool _isMatchmaking = false;
     
+    // FIXME : all
     public void ChangeTo(RectTransform newPanel)
     {
         if (currentMenu != null)
