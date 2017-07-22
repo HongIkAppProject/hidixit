@@ -10,7 +10,18 @@ public class S00_LobbyManager : NetworkLobbyManager
     public delegate void BackButtonDelegate();
     public BackButtonDelegate backDelegate;
     public bool _isMatchmaking = false;
-    
+    public static S00_LobbyManager instance = null;
+
+    void Awake()
+    {
+        // FIXME : 
+        // if (instance = null) instance = this;
+        // else if (instance != this) Destroy(gameObject);
+        // DontDestroyOnLoad(gameObject);
+    }
+
+
+    // FIXME : all
     public void ChangeTo(RectTransform newPanel)
     {
         if (currentMenu != null)

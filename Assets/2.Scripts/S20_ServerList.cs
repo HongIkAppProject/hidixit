@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking.Match;
+using UnityEngine.SceneManagement;
 
 public class S20_ServerList : MonoBehaviour
 {
@@ -19,19 +20,23 @@ public class S20_ServerList : MonoBehaviour
         p25_NoServerFound.SetActive(false);
         //RequestPage(0);
     }
-    public void OnClickRoomSetting()
+
+    public void OnClickOption()
     {
-        s00_LobbyManager.ChangeTo(p40_RoomSettingMenu);
+        SceneManager.LoadScene("OptionScene");
     }
-    public void OnClickPersonalSetting()
+
+    public void OnClickCreate()
     {
-        s00_LobbyManager.ChangeTo(p30_PersonalSettingMenu);
+        SceneManager.LoadScene("CreateScene");
     }
+
     public void RequestPage(int page)
     {
         //TODO 스크롤뷰 구현 후 파라미터를 6 이상으로 변경
         s00_LobbyManager.matchMaker.ListMatches(page, 6, "", true, 0, 0, OnGUImatchList);
     }
+
     void OnGUImatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> matches)
     {
         if (matches.Count == 0)
