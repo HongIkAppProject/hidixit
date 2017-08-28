@@ -36,3 +36,6 @@ sysinfo.txt
 # Version
 ProjectSettings/ProjectVersion.txt
 
+# VS Code
+.vscode/
+
